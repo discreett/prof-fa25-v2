@@ -1,0 +1,10 @@
+ p follow
+    7  bt
+    8  q
+    9  run  -f testcases/all_new
+   10  p *itr
+   11  p itr
+   12  q
+   13  run -f testcases/all_new
+   14  q
+   15  show commands

@@ -1,0 +1,500 @@
+   31  python3 driver.py -w1
+   32  ls -la
+   33  ./driver.py -w1
+   34  ./heap_runner -f traces/week1/short1.rep
+   35  make && ./heap_runner -f traces/week1/short1.rep
+   36  ./driver.py -w1
+   37  python3 driver.py -w1
+   38  make clean
+   39  make debug
+   40  python3 driver.py -w1
+   41  make && ./heap_runner -f traces/week1/short1.rep
+   42  cat > debug_test.c << 'EOF'
+   43  #include "umalloc.h"
+   44  #include <stdio.h>
+   45  int main() {
+   46      uinit();
+   47      void *p1 = umalloc(32);
+   48      void *p2 = umalloc(64);
+   49      
+   50      printf("p1: %p\n", p1);
+   51      printf("p2: %p\n", p2);
+   52      printf("Difference: %ld\n", (char*)p2 - (char*)p1);
+   53      printf("Expected min difference: %ld\n", ALIGN(32) + ALIGN(sizeof(mem_block_header_t)));
+   54      
+   55      return 0;
+   56  }
+   57  EOF
+   58  gcc -o debug_test debug_test.c umalloc.o csbrk.o err_handler.o support.o check_heap.o && ./debug_test
+   59  ./driver.py -w1 -v
+   60  make && ./heap_runner -f traces/week1/short1.rep
+   61  make clean
+   62  make debug
+   63  ./driver.py -w1 -v
+   64  python3 driver.py -w1
+   65  python3 driver.py -w1
+   66  make clean
+   67  make debug
+   68  python3 driver.py -w1
+   69  cd mm-lab-discreett
+   70  make clean
+   71  make debug
+   72  python3 driver.py -w1
+   73  gdb ./runner.c
+   74  gdb ./runner
+   75  gdb ./runner
+   76  ls -la traces/week1/
+   77  pwd && ls -la traces/week1/
+   78  gdb /runner
+   79  gdb ./runner
+   80  make clean
+   81  make debug
+   82  make clean
+   83  make debug
+   84  make clean
+   85  make debug
+   86  python3 driver.py -w1
+   87  A
+   88  gdb /runner
+   89  gdb ./runner
+   90  gdb ./runner
+   91  gdb ./runner
+   92  make clean
+   93  make debug
+   94  python3 driver.py -w1
+   95  python3 driver.py -w2
+   96  make clean
+   97  make debug
+   98  python3 driver.py -w1
+   99  python3 driver.py -w2
+  100  ./bump_test
+  101  git add .
+  102  git commit -m "Week 1"
+  103  git push
+  104  make clean
+  105  make debug
+  106  make clean
+  107  make debug
+  108  git commit -m "Week 1"
+  109  python3 driver.py -w1
+  110  make clean
+  111  make debug
+  112  python3 driver.py -w1
+  113  git add .
+  114  git commit -m "W1 p2"
+  115  git push
+  116  python3 driver.py -w2
+  117  ./runner -t traces/week2/basic/amptjp.rep
+  118  ./runner traces/week2/basic/amptjp.rep
+  119  gdb ./runner
+  120  ./runner -v -r traces/week2/basic/binary.rep
+  121  make cleam
+  122  make clean
+  123  make debug
+  124  python3 driver.py -w2
+  125  make clean
+  126  make debug
+  127  python3 driver.py -w2
+  128  python3 runner.py -w2
+  129  python3 driver.py -w2
+  130  make clean
+  131  make debug
+  132  python3 driver.py -w2
+  133  make clean
+  134  make debug
+  135  python3 driver.py -w2
+  136  make clean && make
+  137  make
+  138  python3 driver.py -w2
+  139  python3 driver.py -w2
+  140  python3 driver.py -w2
+  141  make clean
+  142  make debug
+  143  python3 driver.py -w2
+  144  make clean
+  145  make debug
+  146  python3 driver.py -w2
+  147  make clean
+  148  make debug
+  149  python3 driver.py -w2
+  150  make clean
+  151  make clean
+  152  make debug
+  153  python3 driver.py -w2
+  154  make clean
+  155  make debug
+  156  python3 driver.py -w2
+  157  make clean
+  158  make debug
+  159  python3 driver.py -w2
+  160  git add .
+  161  git commit -m "w3"
+  162  git push
+  163  make clean
+  164  make debug
+  165  python3 driver.py -w2
+  166  cd
+  167  ls
+  168  cd demo
+  169  ls
+  170  git clone git@github.com:discreett/repo-2.git
+  171  ls
+  172  cd repo-2
+  173  pwd
+  174  touch ~/.gdbinit
+  175  echo "set history save on" > ~/.gdbinit
+  176  cat ~/.gdbinit
+  177  ssh-keygen -t ed25519
+  178  cat /u/viet7/.ssh/id_ed25519.pub
+  179  mkdir demo
+  180  cd demo
+  181  pwd
+  182  git clone git@github.com:discreett/profiency-test-va.git
+  183  ls -l
+  184  cd profiency-test-va
+  185  bash
+  186  make clean
+  187  make debug
+  188  make check
+  189  chmod -x mini_ci_reference
+  190  make check
+  191  chmod -x mini_ci mini_ci_reference
+  192  make check
+  193  chmod +x mini_ci_reference
+  194  make clean
+  195  make debug
+  196  make check
+  197  gdb mini_ci
+  198  make clean
+  199  make debug
+  200  make check
+  201  make clean
+  202  make debug
+  203  make check
+  204  gdb mini_ci
+  205  make clean
+  206  make debug
+  207  make check
+  208  gdb mini_ci
+  209  make clean
+  210  make debug
+  211  make check
+  212  gdb mini_ci
+  213  make clean
+  214  make debug
+  215  gdb mini_ci
+  216  make clean
+  217  make debug
+  218  gdb mini_ci
+  219  make clean
+  220  make debug
+  221  make check
+  222  make clean
+  223  make check
+  224  make clean
+  225  make check
+  226  gdb mini_ci
+  227  make clean
+  228  make debug
+  229  gdb mini_ci
+  230  make clean
+  231  make debug
+  232  make check
+  233  make clean
+  234  make debug
+  235  make check
+  236  make clean
+  237  make debug
+  238  make check
+  239  history > log.txt
+  240  command
+  241  commands
+  242  gdb
+  243  touch loglog.txt
+  244  git add .
+  245  git commit -m "second one"
+  246  git push
+  247  cd ..
+  248  rm -rf repo-2
+  249  make
+  250  ./mini.c basic_add.s
+  251  ./mini_ci basic_add.s
+  252  ./mini_ci testcases/basic_add.s
+  253  make check
+  254  make clean
+  255  clear
+  256  make debug
+  257  gdb mini_ci
+  258  gdb mini_ci
+  259  gdb mini_c
+  260  gdb mini_ci
+  261  make
+  262  ./mini_ci testcases/basic_add.s 
+  263  ./mini_ci_reference testcases/basic_add.s 
+  264  ./mini_ci testcases/basic_add.s 
+  265  make check
+  266  make clean
+  267  make debug
+  268  gdb mini_ci
+  269  chmod +x mini_ci_reference
+  270  make clean
+  271  make debug
+  272  ./mini_ci testcases/basic_add.s 
+  273  make check
+  274  gdb mini_ci
+  275  gdb mini_ci
+  276  make clean
+  277  make debug
+  278  gdb mini_ci
+  279  make check
+  280  gdb mini_ci
+  281  make clean
+  282  make debug
+  283  gdb mini_ci
+  284  make check
+  285  history
+  286  history > log.txt
+  287  gdb
+  288  touch gdb_logs.txt
+  289  git status
+  290  git add .
+  291  git commit -m "my first thingy"
+  292  git status
+  293  git push
+  294  cd ..
+  295  rm -rf profiency-test-va
+  296  git clone git@github.com:discreett/c-prof-test.git
+  297  cd demo
+  298  ls
+  299  git clone git@github.com:CS429-FA2025/shared-repo-version-c-discreett.git
+  300  make clean
+  301  clear
+  302  make spinosaurus
+  303  make trike
+  304  clear
+  305  make spinosaurus
+  306  make trike
+  307  make trex
+  308  make raptor
+  309  gdb
+  310  gdb ref_order
+  311  gdb reorder.c
+  312  gdb main.o
+  313  gdb ./main.o
+  314  gdb ./bin/main.o
+  315  make trex
+  316  gdb ./bin/orderlogs
+  317  gdb ./ref_order
+  318  make raptor
+  319  make trike
+  320  make trex
+  321  gdb ./bin/orderlogs
+  322  gdb ./bin/orderlogs
+  323  make spinosaurus
+  324  make trex
+  325  make raptor
+  326  gdb ./bin/orderlogs
+  327  gdb ./ref_order
+  328  gdb ./bin/orderlogs
+  329  gdb ./bin/main.o
+  330  gdb ./bin/orderlogs
+  331  gdb ./bin/orderlogs
+  332  make trex
+  333  make trike
+  334  gdb ./bin/orderlogs
+  335  make trike
+  336  make raptor
+  337  make spinosaurus
+  338  make trike
+  339  make raptor
+  340  make ptera
+  341  clear
+  342  gdb ./bin/orderlogs
+  343  make spinosaurus
+  344  make trike
+  345  make spinosaurus
+  346  make trike
+  347  cd ..
+  348  cd shared-repo-version-c-discreett/
+  349  ls
+  350  git add .
+  351  git commit -m "instructor commit"
+  352  git push
+  353  cd ..
+  354  rm -rf shared-repo-version-c-discreett/
+  355  ls
+  356  make clean
+  357  make debug
+  358  chmod +x mini_ci_reference
+  359  make check
+  360  gdb ./mini_ci
+  361  make clean
+  362  make debug
+  363  make check
+  364  make clean
+  365  make debug
+  366  make check
+  367  gdb ./mini_ci
+  368  make clean
+  369  make debug
+  370  make check
+  371  gdb ./mini_ci
+  372  make clean
+  373  make debug
+  374  make check
+  375  gdb ./mini_ci
+  376  make clean
+  377  make debug
+  378  make check
+  379  make clean
+  380  make debug
+  381  make check
+  382  gdb ./mini_ci
+  383  make clean
+  384  make debug
+  385  make check
+  386  make clean
+  387  make debug
+  388  make check
+  389  history > log.txt
+  390  gdb
+  391  touch logllg.txt
+  392  git status
+  393  git add .
+  394  git commit -m "blah blah blah"
+  395  git push
+  396  rm -rf c-prof-test
+  397  cd ..
+  398  rm -rf c-prof-tests
+  399  ls
+  400  cd cs429
+  401  cd CS420
+  402  cd CS429
+  403  ls
+  404  git clone https://github.com/CS429-FA2025/se-lab-t-n-s-d-team-no-slip-days
+  405  git clone git@github.com:CS429-FA2025/se-lab-t-n-s-d-team-no-slip-days.git
+  406  ls
+  407  cd CS429
+  408  ls
+  409  cd se-lab-t-n-s-d-team-no-slip-days/
+  410  git fetch origin
+  411  git pull origin
+  412  bin/test-se -w 1
+  413  make clean
+  414  make
+  415  bin/test-se -w 1
+  416  bin/test-se -w 0
+  417  bin/test-se -w 2
+  418  bin/test-se -w 3
+  419  bin/test-se -w 4
+  420  make week1
+  421  bin/test-hw
+  422  git fetch origin
+  423  git pull origin
+  424  cd CS429
+  425  cd se-lab-t-n-s-d-team-no-slip-days/
+  426  git fetch origin
+  427  git pull origin
+  428  git diff
+  429  ls
+  430  cd demo
+  431  ls
+  432  git clone git@github.com:discreett/prof-fa25.git
+  433  make spinosaurus
+  434  make
+  435  make trex
+  436  make trex
+  437  make spinosaurus
+  438  clear
+  439  make trex
+  440  make trex
+  441  make raptor
+  442  make trike
+  443  clear
+  444  make spinosaurus
+  445  make trike
+  446  make trike
+  447  ./bin/orderlogs
+  448  ./bin/orderlogs -f testcases/all_new
+  449  make stego
+  450  git diff
+  451  git pull origin
+  452  git fetch
+  453  git pull origin
+  454  git diff
+  455  git fetch origin
+  456  git pull origin
+  457  git add .
+  458  git commit -m "init_rca and ripple_carry_add v1"
+  459  git push
+  460  cd demo
+  461  ls
+  462  cd prof-fa25
+  463  make trex
+  464  bin/orderlogs 
+  465  bin/orderlogs -f testcases/all_new
+  466  make raptor
+  467  make stego
+  468  chmod +x (reference_text)
+  469  chmod +x trie_ref
+  470  chmod +x ref_order
+  471  make stego
+  472  make raptor
+  473  clear
+  474  make spinosaurus
+  475  make trike
+  476  gdb bin/orderlogs
+  477  bin/ci ref_order testcases/all_new
+  478  bin/ref_order testcases/all_new
+  479  ./ref_order testcases/all_new
+  480  ./ref_order -f testcases/all_new
+  481  ./bin/orderlogs -f testcases/all_new
+  482  gdb bin/orderlogs
+  483  make spinosaurus
+  484  make trex
+  485  make stego
+  486  history > shell_logs.txt
+  487  gdb
+  488  touch gdb_commands.txt
+  489  git add .
+  490  git commit -m "lol"
+  491  git push
+  492  cd ..
+  493  rm -rf prof-fa25/
+  494  cd demo
+  495  git clone git@github.com:discreett/prof-fa25-v2.git
+  496  cd prof-fa25-v2/
+  497  make trex
+  498  make raptor
+  499  make stego
+  500  chmod +x (reference_text)
+  501  chmod +x ref_order
+  502  makespinosaurus
+  503  make spinosaurus
+  504  make trex
+  505  make spinosaurus
+  506  make trex
+  507  make raptor
+  508  gdb bin/orderlogs
+  509  gdb .bin/orderlogs
+  510  make spinosaurus
+  511  make trike
+  512  gdb ./bin/orderlogs
+  513  make spinosaurus
+  514  make trike
+  515  make raptor
+  516  make spinosaurus
+  517  make trike
+  518  make raptor
+  519  make trex
+  520  make stego
+  521  gdb bin/orderlogs
+  522  make spinosaurus
+  523  make trike
+  524  make raptor
+  525  gdb bin/orderlogs
+  526  make spinosaurus
+  527  make trike
+  528  make raptor
+  529  make stego
+  530  history > shelllogs.txt
